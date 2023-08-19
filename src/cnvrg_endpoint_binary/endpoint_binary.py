@@ -31,6 +31,7 @@ class EndpointBinary:
     >>> from cnvrg_endpoint_binary import EndpointBinary
     >>> eb = EndpointBinary(binary_name="demo", binary_args=["--flag=true"])
     >>> result = eb.predict("input_arg")
+    >>> print(result)
     """
 
     def __init__(self, **kwargs):
@@ -48,7 +49,8 @@ class EndpointBinary:
         delimiter
         """
         return word.split(self.delimiter)[0] + "".join(
-            x.capitalize() or self.delimiter for x in word.split(self.delimiter)[1:]
+            x.capitalize() or self.delimiter
+            for x in word.split(self.delimiter)[1:]
         )
 
     def _is_prefix(self, stdout):
@@ -102,7 +104,9 @@ class EndpointBinary:
         """
         command = [self.binary_name] + self.binary_args + list(args)
         p = Popen(command, stdin=PIPE, stdout=PIPE, stderr=STDOUT)
-        t = ThreadWithReturnValue(target=self._deal_with_stdout, args=(p,), daemon=True)
+        t = ThreadWithReturnValue(
+            target=self._deal_with_stdout, args=(p,), daemon=True
+        )
         t.start()
         return t.join()
 
