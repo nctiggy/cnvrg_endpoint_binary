@@ -31,7 +31,7 @@ class EndpointThread:
     def __init__(self, **kwargs):
         self.endpoint = kwargs.get("endpoint", None)
         self.function_name = kwargs["function_name"]
-        self.function_kwargs = kwargs.get("function_kwargs", None)
+        self.function_kwargs = kwargs.get("function_kwargs", {})
         if not self.endpoint:
             self._generate_endpoint()
         self.function_kwargs["endpoint"] = self.endpoint
