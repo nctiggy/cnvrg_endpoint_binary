@@ -31,12 +31,12 @@ class EndpointThread:
     def __init__(self, **kwargs):
         self.endpoint = kwargs.get("endpoint", None)
         self.function_name = kwargs["function_name"]
-        self.function_kwargs = kwargs.get("function_kwargs", {})
+        self.function_kwargs = kwargs.get("function_kwargs", None)
         if not self.endpoint:
             self._generate_endpoint()
 
     def run_thread(self):
-        thread = Thread(target=self.function_name, kwargs=self.function_args)
+        thread = Thread(target=self.function_name, kwargs=self.function_kwargs)
         thread.start()
 
     def _generate_endpoint(self):
