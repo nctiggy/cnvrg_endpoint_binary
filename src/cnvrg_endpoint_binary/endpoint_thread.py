@@ -34,6 +34,7 @@ class EndpointThread:
         self.function_kwargs = kwargs.get("function_kwargs", None)
         if not self.endpoint:
             self._generate_endpoint()
+        self.function_kwargs["endpoint"] = self.endpoint
 
     def run_thread(self):
         thread = Thread(target=self.function_name, kwargs=self.function_kwargs)
