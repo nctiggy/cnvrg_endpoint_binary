@@ -39,6 +39,7 @@ class EndpointThread:
     def run_thread(self):
         thread = Thread(target=self.function_name, kwargs=self.function_kwargs)
         thread.start()
+        return thread
 
     def _generate_endpoint(self):
         self.endpoint = Endpoint()
