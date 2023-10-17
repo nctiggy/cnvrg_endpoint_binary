@@ -24,8 +24,8 @@ class EndpointThread:
     >>> kwargs = {}
     >>> kwargs["flag"] = true
     >>> et = EndpointThread(function_name=demo, function_args=kwargs)
-    >>> result = eb.predict("input_arg")
-    >>> print(result)
+    >>> running = et.run_thread().thread.is_alive()
+    >>> print(running)
     """
 
     def __init__(self, **kwargs):
@@ -35,11 +35,24 @@ class EndpointThread:
         if not self.endpoint:
             self._generate_endpoint()
         self.function_kwargs["endpoint"] = self.endpoint
+        self.thread = None
 
     def run_thread(self):
-        thread = Thread(target=self.function_name, kwargs=self.function_kwargs)
-        thread.start()
-        return thread
+        """
+        This method runs the specificed function in a thread. Code after this
+        method will execute while the threaded function runs in parallel.
+
+        Returns
+        -------
+        self : EndpointThread
+            Returns an instance of the EndpointThread object that has an
+            updated thread attribute with the new thread
+        """
+        self.thread = Thread(
+            target=self.function_name, kwargs=self.function_kwargs
+        )
+        self.thread.start()
+        return self
 
     def _generate_endpoint(self):
         self.endpoint = Endpoint()
