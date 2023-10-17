@@ -59,4 +59,4 @@ class TestInit(TestCase):
 class TestRunThread(TestCase):
     def test_run_thread(self):
         thread = eb.run_thread()
-        self.assertIsInstance(thread, Thread)
+        self.assertIsInstance(thread.thread, Thread)
