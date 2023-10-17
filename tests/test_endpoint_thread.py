@@ -29,7 +29,7 @@ class TestInit(TestCase):
         self.assertIsInstance(
             test_eb.endpoint, cnvrg_endpoint_binary.endpoint_thread.Endpoint
         )
-        self.assertEquals(
+        self.assertEqual(
             test_eb.function_kwargs,
             {"test": "answer", "endpoint": test_eb.endpoint},
         )
@@ -50,7 +50,7 @@ class TestInit(TestCase):
         self.assertIsInstance(
             test_eb.endpoint, cnvrg_endpoint_binary.endpoint_thread.Endpoint
         )
-        self.assertEquals(
+        self.assertEqual(
             test_eb.function_kwargs,
             {"test": "answer", "endpoint": test_eb.endpoint},
         )
