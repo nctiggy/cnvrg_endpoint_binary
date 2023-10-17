@@ -25,7 +25,7 @@ pipeline {
             spec:
               containers:
               - name: python
-                image: nctiggy/python-build-image
+                image: nctiggy/python-build-image:1.1.0
                 command:
                 - sleep
                 args:
