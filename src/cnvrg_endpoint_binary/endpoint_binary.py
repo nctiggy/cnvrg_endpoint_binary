@@ -66,24 +66,25 @@ class EndpointBinary:
         tag_split = tag.split("_")
         tag_extracted = "_".join(tag_split[2:])
         kv = tag_extracted.split(":")
-        return self._convert_camelcase(kv[0]), ":".join(kv[1:])
+        return self._convert_camelcase(kv[0]).strip(), ":".join(kv[1:]).strip()
 
     def _deal_with_stdout(self, process):
         result = None
         for line in process.stdout:
-            decoded_line = line.decode("utf-8")
-            match self._is_prefix(decoded_line):
+            if isinstance(line, bytes):
+                line = line.decode("utf-8")
+            match self._is_prefix(line):
                 case "metric":
-                    key, value = self._extract_tag(decoded_line)
+                    key, value = self._extract_tag(line)
                     print(f"key: {key}\nvalue: {value}")
                     if isinstance(self.endpoint, Endpoint):
                         self.endpoint.log_metric(key, value)
                 case "result":
-                    result = json.loads(decoded_line)
-                    print(result)
+                    result = json.loads(line)
+                    print(f"Result: {result}")
                     break
                 case _:
-                    print(decoded_line)
+                    print(line)
         return result
 
     def predict(self, *args):
