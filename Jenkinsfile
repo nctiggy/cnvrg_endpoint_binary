@@ -47,10 +47,14 @@ pipeline {
             }
         }
         stage('Testing') {
+            environment {
+                CODECOV_TOKEN = credentials('codecov-token')
+}
             steps {
                 sh '''
                     tox -e lint
-                    tox -- --junitxml=junit-result.xml
+                    tox -- --junitxml=junit-result.xml --cov-report=xml
+                    codecov -f coverage.xml
                 '''
                 junit 'junit-result.xml'
             }
