@@ -8,7 +8,7 @@ __license__ = "MIT"
 
 
 def test():
-    pass
+    return "test"
 
 
 class TestInit(TestCase):
