@@ -29,8 +29,11 @@
 
 .. image:: https://readthedocs.org/projects/cnvrg_endpoint_binary/badge/?version=latest
      :alt: ReadTheDocs
-     :target: https://cnvrg_endpoint_binary.readthedocs.io/en/stable/
+     :target: https://cnvrg-endpoint-binary.readthedocs.io/en/latest/api/cnvrg_endpoint_binary.html
 
+.. image:: https://img.shields.io/pypi/v/cnvrg_endpoint_binary.svg
+     :alt: PyPI-Server
+     :target: https://pypi.org/project/cnvrg_endpoint_binary/
 |
 
 
