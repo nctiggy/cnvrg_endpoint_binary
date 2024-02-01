@@ -27,11 +27,13 @@
     :alt: Project generated with PyScaffold
     :target: https://pyscaffold.org/
 
+.. image:: https://readthedocs.org/projects/cnvrg_endpoint_binary/badge/?version=latest
+     :alt: ReadTheDocs
+     :target: https://cnvrg_endpoint_binary.readthedocs.io/en/stable/
+
 |
 
-image:: https://readthedocs.org/projects/cnvrg_endpoint_binary/badge/?version=latest
-        :alt: ReadTheDocs
-        :target: https://cnvrg_endpoint_binary.readthedocs.io/en/stable/
+
 =====================
 cnvrg_endpoint_binary
 =====================
