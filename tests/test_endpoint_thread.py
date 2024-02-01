@@ -13,11 +13,6 @@ def test_func():
     pass
 
 
-eb = cnvrg_endpoint_binary.endpoint_thread.EndpointThread(
-    function_name=test_func, endpoint="dummy"
-)
-
-
 class TestInit(TestCase):
     @mock.patch("cnvrg_endpoint_binary.endpoint_thread.Endpoint.__init__")
     def test_init_good_no_endpoint(self, mock_end_init):
@@ -57,6 +52,14 @@ class TestInit(TestCase):
 
 
 class TestRunThread(TestCase):
-    def test_run_thread(self):
-        thread = eb.run_thread()
+    @mock.patch("cnvrg_endpoint_binary.endpoint_thread.Endpoint.__init__")
+    def test_run_thread(self, mock_end_init):
+        mock_end_init.return_value = None
+        test_endpoint = cnvrg_endpoint_binary.endpoint_thread.Endpoint()
+        test_eb = cnvrg_endpoint_binary.EndpointThread(
+            function_name=test_func,
+            function_kwargs={"test": "answer"},
+            endpoint=test_endpoint,
+        )
+        thread = test_eb.run_thread()
         self.assertIsInstance(thread.thread, Thread)
