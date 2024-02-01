@@ -35,7 +35,7 @@
      :alt: PyPI-Server
      :target: https://pypi.org/project/cnvrg_endpoint_binary/
 
-.. image: https://jenkins.web.craigcloud.io/buildStatus/icon?job=cnvrg_endpoint_binary%2Fmain&build=22
+.. image:: https://jenkins.web.craigcloud.io/buildStatus/icon?job=cnvrg_endpoint_binary%2Fmain&build=22
      :alt: Build Status
      :target: https://jenkins.web.craigcloud.io/job/cnvrg_endpoint_binary/
 |
