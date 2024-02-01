@@ -7,10 +7,10 @@
     .. image:: https://readthedocs.org/projects/cnvrg_endpoint_binary/badge/?version=latest
         :alt: ReadTheDocs
         :target: https://cnvrg_endpoint_binary.readthedocs.io/en/stable/
-    image:: https://img.shields.io/coveralls/github/nctiggy/cnvrg_endpoint_binary/main.svg
+    .. image:: https://img.shields.io/coveralls/github/nctiggy/cnvrg_endpoint_binary/main.svg
         :alt: Coveralls
         :target: https://coveralls.io/r/<USER>/cnvrg_endpoint_binary
-    image:: https://img.shields.io/pypi/v/cnvrg_endpoint_binary.svg
+    .. image:: https://img.shields.io/pypi/v/cnvrg_endpoint_binary.svg
         :alt: PyPI-Server
         :target: https://pypi.org/project/cnvrg_endpoint_binary/
     .. image:: https://img.shields.io/conda/vn/conda-forge/cnvrg_endpoint_binary.svg
@@ -23,12 +23,15 @@
         :alt: Twitter
         :target: https://twitter.com/cnvrg_endpoint_binary
 
-image:: https://img.shields.io/badge/-PyScaffold-005CA0?logo=pyscaffold
+.. image:: https://img.shields.io/badge/-PyScaffold-005CA0?logo=pyscaffold
     :alt: Project generated with PyScaffold
     :target: https://pyscaffold.org/
 
 |
 
+image:: https://readthedocs.org/projects/cnvrg_endpoint_binary/badge/?version=latest
+        :alt: ReadTheDocs
+        :target: https://cnvrg_endpoint_binary.readthedocs.io/en/stable/
 =====================
 cnvrg_endpoint_binary
 =====================
