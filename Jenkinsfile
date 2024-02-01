@@ -1,3 +1,5 @@
+def pythonBuildBadge = addEmbeddableBadgeConfiguration(id: "pythonbuild", subject: "Python Build")
+
 def buildJobBlock(status_block) {
     def block = [
                     [
@@ -82,6 +84,14 @@ pipeline {
                     tox -e clean
                 '''
             }
+        }
+    }
+    post {
+        failure {
+            pythonBuildBadge.setStatus('failed')
+        }
+        success {
+            pythonBuildBadge.setStatus('success')
         }
     }
 }
