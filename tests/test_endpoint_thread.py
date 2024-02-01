@@ -9,7 +9,7 @@ __copyright__ = "Craig Smith"
 __license__ = "MIT"
 
 
-def test_func():
+def test_func(**kwargs):
     pass
 
 
