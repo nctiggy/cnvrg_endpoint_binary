@@ -10,7 +10,7 @@ __license__ = "MIT"
 
 
 def test_func():
-    return True
+    pass
 
 
 eb = cnvrg_endpoint_binary.endpoint_thread.EndpointThread(
