@@ -38,6 +38,10 @@
 .. image:: https://jenkins.web.craigcloud.io/buildStatus/icon?job=cnvrg_endpoint_binary%2Fmain&build=22
      :alt: Build Status
      :target: https://jenkins.web.craigcloud.io/job/cnvrg_endpoint_binary/
+
+.. image:: https://codecov.io/gh/nctiggy/cnvrg_endpoint_binary/graph/badge.svg?token=8MHLZ288E2
+     :alt: Code Coverage
+     :target: https://codecov.io/gh/nctiggy/cnvrg_endpoint_binary
 |
 
 
